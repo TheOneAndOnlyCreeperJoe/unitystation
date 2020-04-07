@@ -234,6 +234,10 @@ public class IDCard : NetworkBehaviour, IServerInventoryMove, IServerSpawn, IExa
 	{
 		return accessSyncList.Contains((int) access);
 	}
+	public SyncListInt AccessList()
+	{
+		return accessSyncList;
+	}
 
 	/// <summary>
 	/// Removes the indicated access from this IDCard

@@ -34,6 +34,7 @@ public class PlayerLightControl : NetworkBehaviour, IServerInventoryMove
 		NamedSlot.suitStorage,
 		NamedSlot.belt,
 		NamedSlot.back,
+		NamedSlot.id,
 		NamedSlot.storage01,
 		NamedSlot.storage02,
 		NamedSlot.suitStorage,

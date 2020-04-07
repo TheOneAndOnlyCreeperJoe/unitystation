@@ -48,6 +48,13 @@ public class InteractableStorage : MonoBehaviour, IClientInteractable<HandActiva
 	private bool canClickPickup;
 
 	/// <summary>
+	/// Flag to determine if it should move the storage by clicking it E.G PDA.
+	/// </summary>
+	[SerializeField]
+	[Tooltip("Can you move the storage by clicking it with an empty hand?")]
+	private bool canClickMove;
+
+	/// <summary>
 	/// Flag to determine if this can empty out all items by activating it
 	/// </summary>
 	[SerializeField]
@@ -119,8 +126,12 @@ public class InteractableStorage : MonoBehaviour, IClientInteractable<HandActiva
 
 		if (interaction.UsedObject == null)
 		{
-			//nothing in hand, just open / close the backpack
-			return Interact(HandActivate.ByLocalPlayer());
+			// check to see if we should move the object or open it instead
+			if (!canClickMove)
+			{
+				//nothing in hand, just open / close the backpack
+				return Interact(HandActivate.ByLocalPlayer());
+			}
 		}
 		return false;
 	}

@@ -24,11 +24,18 @@ public class ActionControlInventory : MonoBehaviour, IClientInventoryMove
 	void Start()
 	{
 		var ActionGUIs = this.GetComponents<IActionGUI>();
-		foreach (var ActionGUI in ActionGUIs) {
-			if (!ActionGUI.ActionData.PreventBeingControlledBy.Contains(ActionControllerType)) {
-				ControllingActions.Add(ActionGUI);
+			foreach (var ActionGUI in ActionGUIs)
+			{
+				if (ActionGUI.ActionData == null)
+				{
+					return;
+				}
+				if (!ActionGUI.ActionData.PreventBeingControlledBy.Contains(ActionControllerType))
+				{
+					ControllingActions.Add(ActionGUI);
+				}
 			}
-		}
-	}
+		
+	}	
 }
 

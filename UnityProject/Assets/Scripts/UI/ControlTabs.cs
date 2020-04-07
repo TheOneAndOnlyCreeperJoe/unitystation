@@ -553,8 +553,8 @@ public class ControlTabs : MonoBehaviour
 			else if ( !Validations.CanApply(PlayerManager.LocalPlayerScript, tab.Provider, NetworkSide.Client))
 			{
 				//Make sure the item is not in the players hands first:
-				if (UIManager.Hands.CurrentSlot.Item != tab.Provider.gameObject &&
-					UIManager.Hands.OtherSlot.Item != tab.Provider.gameObject)
+				if (UIManager.Hands.CurrentSlot.ItemObject != tab.Provider.gameObject &&
+					UIManager.Hands.OtherSlot.ItemObject != tab.Provider.gameObject)
 				{
 					toClose.Add(tab);
 				}
