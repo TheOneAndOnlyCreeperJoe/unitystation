@@ -1152,7 +1152,7 @@ MonoBehaviour:
   isPopOut: 1
   Provider: {fileID: 0}
   ProviderRegisterTile: {fileID: 0}
-  Type: 15
+  Type: 17
   mainSwitcher: {fileID: 2228560700560661916}
   menuPage: {fileID: 8832850515516739195}
   loadedCartridge: {fileID: 7882553444761713791}
